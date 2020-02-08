@@ -1,6 +1,4 @@
  var favorites;
-//  var favorites = []
-
 
 window.onload = () => {
 

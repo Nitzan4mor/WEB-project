@@ -1,27 +1,53 @@
 header {
     min-height: 150px;
-    /* background-image: url(_images/background.jpg);
-    background-position: left;
-    background-repeat: no-repeat; */
 }
 
 header a {
-    font-size: 22px;
-    color: seagreen;
+    font-size: 28px;
+    color: #010a43;
 }
 
 header a:hover {
-    color: red;
+    color: #4826c5;
 }
+
+.div_nav{
+    font-size: 28px;
+    color: #FFFFFF;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+.container-fluid{
+    background-color: #ff9d9d;
+}
+
+header h1{
+    color: #010a43;
+text-shadow: #ffc2c2 2px 2px 0px, #9C9C9C 4px 4px 0px;
+}
+
+main{
+    min-height: 500px;
+}
+
 
 .switch_button {
     margin: 0 auto;
     display: block;
+    color: #ff2e63;
+    font-size: 22px;
+    background-color: #080858;
+    border-color: #ffc2c2;
+    border-image-width: 2;
     
 }
 
 .div_age{
     font-size: 20px;
+}
+
+main button{
+    background-color: #FFF;
 }
 
 footer {
