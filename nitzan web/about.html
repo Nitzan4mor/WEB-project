@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="_css/main.css">
     <title>Document</title>
-    <script src="_js/main.js"></script>
-    <script src="_js/person.js"></script>
 
 </head>
 
@@ -25,23 +22,34 @@
                     <a class="col-2" href="about.html">About</a>
                 </div>
             </div>
-            <h1 class="text-center mt-4">Random People</h1>
+            <h1 class="text-center mt-4">Favorite People</h1>
         </div>
     </header>
 
     <main class="container-fluid">
-        <div class="container">
-            <button onclick="doRestApi()" class="switch_button mb-4">Switch persons</button>
-            <div id="id_parent" class="row">
-            </div>
-
+        <div class="container about_div">
+            This web application fetch 12 randoms persons from Api each time and allows you to do the following:
+            <br>
+            <ol>
+                <li>Display each person basic details - name, image and age</li>
+                <li>Display more details - email, phone and cell</li>
+                <li>Add person to your favorite list using local storage</li>
+                <li>Display all your favorite persons</li>
+                <li>Remove a single person from the favorist list</li>
+                <li>Remove all of the favorit persons from the list</li>
+            </ol>
+            <br>
+            <div class="text-center enjoy_div">Enjoy!</div>
         </div>
     </main>
+
     <footer class="container-fluid">
         <div class="container">
             <div class="div_nav col-4 py-2">Made By Nitzan Mor</div>
         </div>
     </footer>
+</body>
+
 </body>
 
 </html>
