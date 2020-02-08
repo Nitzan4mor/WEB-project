@@ -1,0 +1,29 @@
+header {
+    min-height: 150px;
+    /* background-image: url(_images/background.jpg);
+    background-position: left;
+    background-repeat: no-repeat; */
+}
+
+header a {
+    font-size: 22px;
+    color: seagreen;
+}
+
+header a:hover {
+    color: red;
+}
+
+.switch_button {
+    margin: 0 auto;
+    display: block;
+    
+}
+
+.div_age{
+    font-size: 20px;
+}
+
+footer {
+    min-width: 80px;
+}

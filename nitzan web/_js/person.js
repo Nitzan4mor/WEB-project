@@ -1,5 +1,5 @@
 class Person {
-    constructor(_parent, _name, _image, _age, _phone, _cell, _email, _id) {
+    constructor(_parent, _name, _image, _age, _phone, _cell, _email, _id, _isFav) {
         this.parent = _parent;
         this.name = _name;
         this.image = _image;
@@ -8,6 +8,7 @@ class Person {
         this.cell = _cell;
         this.email = _email;
         this.id = _id;
+        this.isFav = _isFav;
     }
 
     addToHtml() {
@@ -31,12 +32,17 @@ class Person {
             this.addButton(newDiv, lessInfoBtn, "btn-danger", "Less info");
             lessInfoBtn.addEventListener("click", () => {
                 this.addBasicInnerHtml(newDiv)
-                this.addButton(newDiv, infoBtn, "btn-info mr-2", "More Info");
-                this.addButton(newDiv, favBtn, "btn-warning ml-2", "Add to Favotires")
+                if (!this.isFav) {
+                    this.addButton(newDiv, infoBtn, "btn-info mr-2", "More Info");
+                    this.addButton(newDiv, favBtn, "btn-warning ml-2", "Add to Favotires")
+                }else {
+                    this.addButton(newDiv, infoBtn, "btn-info mr-2 h1", "More Info");
+                }
             });
         });
 
         favBtn.addEventListener("click", () => {
+            this.isFav = true;
             favorites.push(this);
             localStorage.setItem("favs", JSON.stringify(favorites));
             this.addBasicInnerHtml(newDiv)
@@ -80,17 +86,18 @@ class Person {
             lessInfoBtn.addEventListener("click", () => {
                 this.addBasicInnerHtml(newDiv)
                 this.addButton(newDiv, infoBtn, "btn-info mr-2", "More Info");
-                this.addButton(newDiv, favBtn, "btn-warning ml-2", "Add to Favotires")
+                this.addButton(newDiv, favBtn, "btn-danger ml-2", "Remove from Favotires")
             });
         });
 
         favBtn.addEventListener("click", () => {
-
-            counter --;
-
-            localStorage.setItem("favs", JSON.stringify(favorites));
-            this.addBasicInnerHtml(newDiv)
-            this.addButton(newDiv, infoBtn, "btn-info h1", "More Info");
+            for (var i = 0; i < favorites.length; i++) {
+                if (favorites[i].id == this.id) {
+                    favorites.splice(i, 1);
+                    localStorage.setItem("favs", JSON.stringify(favorites));
+                    displayFavorites();
+                }
+            }
         })
     }
 

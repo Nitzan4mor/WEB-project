@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+   <link rel="stylesheet" href="_css/main.css">
+        <title>Document</title>
     <script src="_js/favs.js"></script>
     <script src="_js/person.js"></script>
     
@@ -19,7 +20,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <a class="col-3" href="project.html">Home</a>
-                <div class="row col-4 justify-content-between align-items-center">
+                <div class="row col-2 justify-content-between align-items-center">
                     <a class="col-3" href="favorites.html">Favorites</a>
                     <a class="col-3" href="#">About</a>
                 </div>
@@ -30,6 +31,7 @@
 
     <main class="container-fluid">
         <div class="container">
+            <button onclick="clearAllFavs()" class="btn-danger switch_button mb-4">Clear all favoritess</button>
             <div id="id_parent" class="row">
 
                 <!-- <div class="col-lg-4 p-2">

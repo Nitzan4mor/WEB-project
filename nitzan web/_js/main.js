@@ -1,8 +1,14 @@
- var favorites = JSON.parse(localStorage.getItem("favs"));
+ var favorites;
 //  var favorites = []
 
 
 window.onload = () => {
+
+    if(localStorage.getItem("favs")){
+        favorites =  JSON.parse(localStorage.getItem("favs"));
+    }else {
+        favorites = [];
+    }
     doRestApi()
 };
 
@@ -24,7 +30,7 @@ var doRestApi = () =>{
 var createPersons = (_ar) =>{
     id_parent.innerHTML = "";
     _ar.map(item => {
-        let person = new Person(id_parent,item.name.first + " " + item.name.last, item.picture.large, item.dob.age, item.phone, item.cell, item.email, item.login.uuid);
+        let person = new Person(id_parent,item.name.first + " " + item.name.last, item.picture.large, item.dob.age, item.phone, item.cell, item.email, item.login.uuid, false);
         person.addToHtml();
         console.log(person.id);
         
