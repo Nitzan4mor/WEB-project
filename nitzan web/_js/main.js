@@ -1,3 +1,7 @@
+ var favorites = JSON.parse(localStorage.getItem("favs"));
+//  var favorites = []
+
+
 window.onload = () => {
     doRestApi()
 };
@@ -8,7 +12,7 @@ var doRestApi = () =>{
     fetch(myUrl)
     .then(resp=> resp.json())
     .then(json_data =>{
-        console.log(json_data.results);
+        // console.log(json_data.results);
         createPersons(json_data.results);
         
     })
@@ -20,8 +24,11 @@ var doRestApi = () =>{
 var createPersons = (_ar) =>{
     id_parent.innerHTML = "";
     _ar.map(item => {
-        let person = new Person(id_parent,item.name.first + " " + item.name.last, item.picture.large, item.dob.age, item.phone, item.cell, item.email);
+        let person = new Person(id_parent,item.name.first + " " + item.name.last, item.picture.large, item.dob.age, item.phone, item.cell, item.email, item.login.uuid);
         person.addToHtml();
+        console.log(person.id);
+        
     })
 };
+
 
